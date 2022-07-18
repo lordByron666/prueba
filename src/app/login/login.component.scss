@@ -1,0 +1,52 @@
+body {
+  // background: #007bff;
+  // background-image: linear-gradient(to right, #2915f9, #0054ff, #0077ff,
+  // #0094ff, #00adff, #1bbbfc, #40c7f8, #62d3f3, #66daf6, #6be1f9, #70e8fb, #77effd);   
+  // background: #d1fbff;
+  background-image: url(../../assets/images/rio.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  background-color: black;
+  padding: 2.2rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.card-body {
+  // background: #6db5f8;
+  background-image: linear-gradient(to right, #5cdfd2, #00bddb, #0097e7, #006ce2, #1232bd);
+  //background: #d1fbff;
+  //border-radius: 30%;
+}
+
+.form-control {
+  border-radius: 25rem;
+}
+
+.form-field {
+  width: 100%;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.2rem;
+  color: #666;
+  padding: 10px 15px 10px 10px
+}
+
+a {
+  color: white;
+}
+button{
+  border-style: double;
+  border-color: white;
+  border-width: 10px;
+}

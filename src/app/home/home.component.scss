@@ -1,0 +1,46 @@
+body{
+    background-color: rgb(160, 230, 255) !important;
+}
+
+.opacity-img {
+  opacity: 0.5;
+}
+
+.text-center{
+  color: black;
+}
+
+.picsum-img-wrapper img{
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.card{
+  width: 85%;
+  margin: auto;
+}
+.card img{
+  height: 300px;
+  object-fit: cover;
+}
+.welcome_Logo{
+  padding: 50px 0px 50px 0px;
+  background: black;
+  text-align: center;
+  //margin-left: 10%;
+  //margin-right: 10%;
+}
+.welcome_Logo img{
+  max-width: 20%;
+  max-height: 60%;
+  border-radius:15%;
+  border-style: double;
+  border-color: white;
+  border-width: 10px;
+  width: 50%;
+  height: 50%;
+  background-color: #4c7a81;
+}
+.welcome_Logo h1{
+  color: rgb(221, 78, 102);
+  font-size: 60PX;
+}

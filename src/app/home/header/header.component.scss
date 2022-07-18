@@ -1,0 +1,61 @@
+.tamano {
+  height: 600px;
+}
+
+.nav-top-fix{
+  position:sticky;
+}
+
+//degradacion de color
+.navbar-degradado{
+  background-image: linear-gradient(to right, #5cdfd2, #00bddb, #0097e7, #006ce2, #1232bd);
+}
+
+.navbar{
+//padding: 3.5rem 1rem;
+padding: 0.5rem 1rem;
+}
+nav ul li a:hover {
+  background: #1e6cc5;
+}
+//letra y tamaño del nav
+nav ul li a{
+font-size: 11pt;
+
+font-weight: bold;
+color: rgb(255, 255, 255)
+}
+//letra de img
+#tips-img{
+  font-family: "ABeeZee", sans-serif;
+  color: rgb(221, 78, 102);
+  font-size: 1.7rem;
+}
+
+.navbar-brand{
+  margin-right: 30.5rem;
+}
+
+.form-control{
+  border: 4px solid #6c757d;
+  border-radius: 1.25rem;
+  height: calc(2.5em + 0.75rem + -2px);
+}
+
+.container{
+  max-width: 1236px;
+}
+//-----------------------------------------------------header search--------------------------------------------
+.navbar_search{
+  //padding: 3.5rem 1rem;
+  padding: 0.5rem 6rem;
+  }
+
+.navbar-degradado2{
+  //background-image: radial-gradient(circle, #6ba0f0, #6d9ce6, #6e97dc, #6f93d3, #708fc9); //colores 1(#6BA0F0) 2(#708FC9)
+  //background: rgb(0, 0, 0);
+  // position: fixed;
+  // margin-top: 5%;
+  position:static;
+
+}

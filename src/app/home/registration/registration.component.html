@@ -1,0 +1,217 @@
+<app-header></app-header>
+<div class="container register">
+    <div class="row">
+        <div class="col-md-3 register-left">
+            <img src="../../../assets/images/prueba.jpeg" alt="" />
+            <h3>Bienvenido/a</h3>
+            <p>¡Regístrate y publica tus eventos al mundo!</p>
+            <a href="/login" class="btn btn-primary">Iniciar sesión</a>
+        </div>
+        <div class="col-md-9 register-right">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">¡Regístrate ahora!</h3>
+
+                    <div class="row register-form">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="names" name="names" [(ngModel)]="person.names" autocomplete="false"
+                                    type="text" class="form-control" placeholder="Nombres *" required minlength="3"
+                                    #names="ngModel" />
+
+                                <div *ngIf="names.invalid && (names.dirty || names.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="names.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="names.errors?.['minlength']">
+                                        Campo debe ser mayor a 3 caracteres.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <select class="form-control" id="type_identity_id" name="typeIdentityId"
+                                    [(ngModel)]="person.typeIdentityId" required #typeIdentityId="ngModel">
+                                    <option value="" disabled selected>Seleccione el tipo de identificación</option>
+                                    <option value="catalogueValue6">Pasaporte</option>
+                                    <option value="catalogueValue5">Cédula</option>
+                                </select>
+
+                                <div *ngIf="typeIdentityId.invalid && (typeIdentityId.dirty || typeIdentityId.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="typeIdentityId.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input id="email" name="email" [(ngModel)]="person.email" autocomplete="false"
+                                    type="email" class="form-control" placeholder="Correo electrónico *" required
+                                    #email="ngModel" />
+
+                                <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="email.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="password" name="password" [(ngModel)]="person.password" autocomplete="false"
+                                    type="password" class="form-control" placeholder="Contraseña *" required
+                                    #password="ngModel" minlength="6" />
+
+                                <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="password.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="password.errors?.['minlength']">
+                                        Campo debe ser mayor o igual a 6 caracteres.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="phone" name="phone" [(ngModel)]="person.phone" autocomplete="false"
+                                    type="text" minlength="10" maxlength="10" class="form-control"
+                                    placeholder="Teléfono celular *" #phone="ngModel" required />
+
+                                <div *ngIf="phone.invalid && (phone.dirty || phone.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="phone.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="phone.errors?.['minlength']">
+                                        Campo debe tener 10 dígitos.
+                                    </div>
+                                    <div *ngIf="phone.errors?.['maxlength']">
+                                        Campo debe tener 10 dígitos.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="generId"
+                                        [(ngModel)]="person.generId" id="inlineRadio1" value="catalogueValue3"
+                                        #generId="ngModel" required>
+                                    <label class="form-check-label" for="inlineRadio1">Masculino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="generId"
+                                        [(ngModel)]="person.generId" id="inlineRadio2" value="catalogueValue4"
+                                        #generId="ngModel" required>
+                                    <label class="form-check-label" for="inlineRadio2">Femenino</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="generId"
+                                        [(ngModel)]="person.generId" id="inlineRadio3" value="catalogueValue7"
+                                        #generId="ngModel" required>
+                                    <label class="form-check-label" for="inlineRadio3">GLBTI u Otros</label>
+                                </div>
+
+                                <div *ngIf="generId.invalid && (generId.dirty || generId.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="generId.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input id="surnames" name="surnames" [(ngModel)]="person.surnames" autocomplete="false"
+                                    type="text" class="form-control" placeholder="Apellidos *" #surnames="ngModel"
+                                    required minlength="3" />
+
+                                <div *ngIf="surnames.invalid && (surnames.dirty || surnames.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="surnames.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="surnames.errors?.['minlength']">
+                                        Campo debe ser mayor a 3 caracteres.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- TODO: Cambiar username -> idetification cuando se agregue en la BD -->
+                                <!-- TODO: Validación tipo de identificación -->
+                                <input id="username" name="username" [(ngModel)]="person.username" type="text"
+                                    class="form-control" placeholder="Número de identificación *" #username="ngModel"
+                                    required minlength="10" maxlength="10" />
+
+                                <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                    class="text-danger ml-1 mt-2">
+                                    <div *ngIf="username.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="username.errors?.['minlength']">
+                                        Campo debe tener 10 dígitos.
+                                    </div>
+                                    <div *ngIf="username.errors?.['maxlength']">
+                                        Campo debe tener 10 dígitos.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input id="nick" name="nick" [(ngModel)]="person.nick" autocomplete="false" type="text"
+                                    minlength="10" maxlength="10" name="nick" class="form-control" placeholder="Nick *"
+                                    #nick="ngModel" minlength="3" required />
+
+                                <div *ngIf="nick.invalid && (nick.dirty || nick.touched)" class="text-danger ml-1 mt-2">
+                                    <div *ngIf="nick.errors?.['required']">
+                                        Campo requerido.
+                                    </div>
+                                    <div *ngIf="nick.errors?.['minlength']">
+                                        Campo debe ser mayor a 3 caracteres.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- TODO: falta comparar con la contraseña original-->
+                            <div class="form-group">
+                                <input id="confirm_password" name="confirm_password" [(ngModel)]="confirm_password"
+                                    autocomplete="false" type="text" type="password" class="form-control"
+                                    placeholder="Confirmar contraseña *" required minlength="6" />
+
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typePersonId"
+                                    [(ngModel)]="person.typePersonId" id="inlineRadio4" value="catalogueValue8"
+                                    #typePersonId="ngModel" required />
+                                <label class="form-check-label" for="inlineRadio4">Natural</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="typePersonId"
+                                    [(ngModel)]="person.typePersonId" id="inlineRadio5" value="catalogueValue9"
+                                    #typePersonId="ngModel" required />
+                                <label class="form-check-label" for="inlineRadio5">Jurídica</label>
+                            </div>
+
+                            <div *ngIf="typePersonId.invalid && (typePersonId.dirty || typePersonId.touched)"
+                                class="text-danger ml-1 mt-2">
+                                <div *ngIf="typePersonId.errors?.['required']">
+                                    Campo requerido.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mb-5">
+                        <a href="/home" class="btn btn-danger mx-4">Cancelar</a>
+                        <button
+                            [disabled]="!names.valid || !typeIdentityId.valid || !email.valid || !password.valid || !phone.valid || !generId.valid || !surnames.valid || !username.valid || !nick.valid || !typePersonId.valid"
+                            (click)="createPerson()" class="btn btn-primary mx-4">Registrarse</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>
